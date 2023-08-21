@@ -118,7 +118,7 @@ export const MenuItemTrigger = component$(({ text }: { text: string }) => {
         }
       }}
       class={clsx(
-        "inline-flex rounded-md px-2 py-1 text-sm font-medium outline-violet-500",
+        "inline-flex rounded-md px-2 py-1 text-sm outline-violet-500",
         store.opened === text
           ? "bg-neutral-200 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100"
           : "text-neutral-700 hover:bg-neutral-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-900 dark:hover:text-neutral-100",
@@ -161,7 +161,9 @@ export const MenuItem = component$(
         )}
       >
         <Slot />
-        <LucideChevronRight class="ml-auto stroke-2" />
+        <span class="ml-auto">
+          <LucideChevronRight class="ml-14 stroke-2 text-neutral-400 dark:text-neutral-600" />
+        </span>
         {/* {props.subMenu$()} */}
         {openSubMenu.value && <Slot name="subMenu" />}
       </Comp>
@@ -190,7 +192,7 @@ export const MenuItemKeybind = component$(({ styles }: { styles?: string }) => {
     <span class="ml-auto">
       <span
         class={clsx(
-          "ml-10 flex text-xs font-medium text-neutral-400 dark:text-neutral-600",
+          "ml-14 flex text-xs font-medium text-neutral-400 dark:text-neutral-600",
           styles,
         )}
       >
